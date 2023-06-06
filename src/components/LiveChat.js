@@ -21,7 +21,7 @@ const LiveChat = () => {
   }, [])
   return (
     <>
-      <div className='w-full h-[600px] ml-2 p-2 border border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse'>
+      <div className='w-96 ml-8 h-[560px] ml-2 p-2 border border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse'>
         <div>
           {chatMessages.map((chatMessage, i) => {
             return (
@@ -36,7 +36,7 @@ const LiveChat = () => {
       </div>
 
       <form
-        className='w-full p-2 ml-2 border border-black'
+        className='w-96 ml-8 p-2 ml-2 border border-black'
         onSubmit={(e) => {
           e.preventDefault()
           console.log('On Form Submit')

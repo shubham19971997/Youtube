@@ -44,7 +44,7 @@ const Sidebar = () => {
   ]
 
   return (
-    <div className='p-5 shadow-lg col-span-2 w-48 mt-12'>
+    <div className='p-5 shadow-sm col-span-2 w-48 mt-12'>
       <ul>
         {topView?.map((item) => {
           return <SideButton Icon={item.icon} name={item.iconName} />

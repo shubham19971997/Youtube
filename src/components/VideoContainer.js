@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import YOUTUBE_VIDEO_API from './../utils/constants'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
-import { AdVideoCard } from './VideoCard'
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([])
@@ -14,14 +13,18 @@ const VideoContainer = () => {
     const json = await data.json()
     setVideos(json.items)
   }
+  console.log(videos)
   return (
-    <div className='flex flex-wrap mt-4 ml-4'>
-      {videos[0] && <AdVideoCard info={videos[0]}/>}
+    <div className='flex items-center flex-wrap mt-2 ml-2 roboto'>
       {videos &&
-        videos.map((video) => {
+        videos.map((video, index) => {
           return (
-            <Link key={video.id} to={"/watch?v="+video.id}>
-              <VideoCard info={video} />
+            <Link
+              key={video.id}
+              to={'/watch?v=' + video.id}
+              state={{info: video}}
+            >
+              <VideoCard info={video} ind={index} />
             </Link>
           )
         })}
