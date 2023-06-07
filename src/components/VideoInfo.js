@@ -1,13 +1,23 @@
 import React from 'react'
 import Formatter from '../utils/nFormatter'
-import { TfiBell } from 'react-icons/tfi'
+import WatchButton from './WatchButton'
+import { TfiBell, TfiDownload } from 'react-icons/tfi'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai'
+import { RiShareForwardLine } from 'react-icons/ri'
+import { TbHeartPlus } from 'react-icons/tb'
+import { BsThreeDots } from 'react-icons/bs'
 
 const VideoInfo = ({ info }) => {
   const { snippet, statistics } = info
   const { commentCount, viewCount, likeCount } = statistics
   const { title, description, channelTitle } = snippet
+
+  const buttonText = [
+    { icon: RiShareForwardLine, name: 'Share' },
+    { icon: TfiDownload, name: 'Download' },
+    { icon: TbHeartPlus, name: 'Thanks' },
+  ]
 
   const subscribers = Formatter(viewCount, 1)
   return (
@@ -39,7 +49,12 @@ const VideoInfo = ({ info }) => {
           <div className='inline-block h-6 min-h-[1em] w-0.5 self-stretch bg-slate-400 mx-4'></div>
           <AiOutlineDislike size={20} className='mx-1' />
         </div>
-        <div className=' ml-2 flex items-center bg-slate-100 hover:bg-slate-200 rounded-full p-1'></div>
+        {buttonText.map((button) => {
+          return <WatchButton Icon={button.icon} name={button.name} />
+        })}
+        <div className=' ml-2 flex items-center bg-slate-100 hover:bg-slate-200 rounded-full h-full p-1'>
+          <BsThreeDots className='mx-1 my-1' size={18} />
+        </div>
       </div>
     </div>
   )
