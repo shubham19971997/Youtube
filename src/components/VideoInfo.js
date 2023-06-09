@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Formatter from '../utils/nFormatter'
 import WatchButton from './WatchButton'
 import { TfiBell, TfiDownload } from 'react-icons/tfi'
@@ -7,11 +7,14 @@ import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai'
 import { RiShareForwardLine } from 'react-icons/ri'
 import { TbHeartPlus } from 'react-icons/tb'
 import { BsThreeDots } from 'react-icons/bs'
+import getTime from '../utils/getTime'
 
 const VideoInfo = ({ info }) => {
   const { snippet, statistics } = info
   const { commentCount, viewCount, likeCount } = statistics
-  const { title, description, channelTitle } = snippet
+  const { title, description, channelTitle, publishedAt } = snippet
+
+  const [showMore, setShowMore] = useState(false)
 
   const buttonText = [
     { icon: RiShareForwardLine, name: 'Share' },
@@ -19,7 +22,9 @@ const VideoInfo = ({ info }) => {
     { icon: TbHeartPlus, name: 'Thanks' },
   ]
 
+  const time = getTime(publishedAt)
   const subscribers = Formatter(viewCount, 1)
+  const views = Formatter(viewCount / 3, 0)
   const likes = Formatter(likeCount, 1)
 
   return (
@@ -64,7 +69,18 @@ const VideoInfo = ({ info }) => {
         </div>
       </div>
       <div className='w-full h-full text-sm bg-slate-100 hover:bg-slate-200 rounded-md p-4 mt-4'>
-        {description}
+        <p className='text-slate-500'>
+          <span className='text-slate-900'>
+            {views} views | {time} |
+          </span>{' '}
+          {channelTitle}
+        </p>
+        <p
+          className='mt-2 cursor-pointer font-normal'
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? description : description.slice(0, 350) + '......'}
+        </p>
       </div>
     </div>
   )

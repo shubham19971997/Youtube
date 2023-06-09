@@ -1,15 +1,17 @@
 import React from 'react'
 import Formatter from '../utils/nFormatter'
+import getTime from '../utils/getTime'
 
 const VideoCard = ({ info, ind }) => {
   if (!info) return null
   const { snippet, statistics } = info
-  const { channelTitle, title, thumbnails } = snippet
+  const { channelTitle, title, thumbnails,publishedAt } = snippet
 
   var noSetter = statistics.viewCount > 1000000 ? 1 : 0
   var setTitle = title.length>60 ? title.slice(0,60)+"..." : title
   const views = Formatter(statistics.viewCount, noSetter)
-  console.log("Info"+info);
+  const time = getTime(publishedAt);
+
   return (
     <div className='p-1 m-1 mb-0 w-80'>
       <img
@@ -36,7 +38,7 @@ const VideoCard = ({ info, ind }) => {
             </li>
             <li className='h-1 w-1 bg-slate-500 mt-1.5 rounded-full'></li>
             <li className='px-1 font-medium text-xs text-slate-500'>
-              {views}
+              {time}
             </li>
           </div>
         </ul>
