@@ -29,15 +29,15 @@ const VideoCard = ({ info, ind }) => {
         </div>
         <ul className='h-32 font-roboto w-64'>
           <li className='font-semibold px-2 text-sm'>{setTitle}</li>
-          <li className='font-medium mt-1 text-xs text-slate-500 px-2'>
+          <li className='font-normal mt-1 text-sm text-slate-500 px-2'>
             {channelTitle}
           </li>
           <div className='flex '>
-            <li className='pl-2 pr-1 font-medium text-xs text-slate-500'>
-              {views}
+            <li className='pl-2 pr-1 font-normal text-xs text-slate-500'>
+              {views} views
             </li>
-            <li className='h-1 w-1 bg-slate-500 mt-1.5 rounded-full'></li>
-            <li className='px-1 font-medium text-xs text-slate-500'>
+            <li className='h-1 w-1 bg-slate-400 mt-1.5 rounded-full'></li>
+            <li className='px-1 font-normal text-xs text-slate-500'>
               {time}
             </li>
           </div>
