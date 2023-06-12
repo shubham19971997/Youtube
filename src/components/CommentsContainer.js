@@ -67,7 +67,7 @@ const Comment = ({data,ind}) => {
   console.log("props",data)
   const { name, text, replies } = data
   return (
-    <div className='flex shadow-sm w-96 bg-gray-100 p-2 rounded-lg my-2'>
+    <div className='flex shadow-sm w-96  bg-gray-100 p-2 rounded-lg my-2'>
       <img
         className='w-12 h-12 rounded-full'
         alt='user'

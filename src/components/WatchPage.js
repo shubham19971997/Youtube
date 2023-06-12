@@ -5,6 +5,7 @@ import { useSearchParams,useLocation } from 'react-router-dom'
 import CommentsContainer from './CommentsContainer'
 import LiveChat from './LiveChat'
 import VideoInfo from './VideoInfo'
+import SuggestedVideos from './SuggestedVideos'
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams()
@@ -34,6 +35,7 @@ const WatchPage = () => {
         </div>
         <div>
           <LiveChat />
+          <SuggestedVideos/>
         </div>
       </div>
       <CommentsContainer />
