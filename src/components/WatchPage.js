@@ -16,7 +16,7 @@ const WatchPage = () => {
   let {state} = useLocation();
   console.log(state.info)
   return (
-    <div className='flex flex-col pl-28 w-full'>
+    <div className='flex flex-col pl-24 w-full'>
       <div className='flex pt-20 w-full'>
         <div>
           <iframe
@@ -33,7 +33,7 @@ const WatchPage = () => {
               <VideoInfo info={state.info}/>
           </div>
         </div>
-        <div>
+        <div className="mr-8">
           <LiveChat />
           <SuggestedVideos/>
         </div>

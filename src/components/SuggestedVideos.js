@@ -13,7 +13,7 @@ const SuggestedVideos = () => {
   }
   console.log(videos[0])
   return (
-    <div className='ml-4 mt-4'>
+    <div className='mt-4 w-80'>
       {videos &&
         videos.map((video) => {
           return (

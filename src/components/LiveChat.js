@@ -22,16 +22,16 @@ const LiveChat = () => {
     return () => clearInterval(i)
   }, [])
   return (
-    <>
+    <div>
       <div
-        className='rounded-full cursor-pointer mt-0 border-2 ml-6 m-2 p-1 text-center text-sm font-medium w-96 shadow-sm hover:bg-slate-200'
+        className='rounded-full cursor-pointer mt-0 border-2 m-2 p-1 text-center text-sm font-medium w-96 shadow-sm hover:bg-slate-200'
         onClick={() => setShowChat(!showChat)}
       >
         {showChat ? 'Hide Chat Replay' : 'Show Chat Replay'}
       </div>
       {showChat && (
-        <div className='ml-4'>
-          <div className='w-96 h-[480px] ml-2 p-2 border border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse'>
+        <div className='ml-2'>
+          <div className='w-96 h-[480px] p-2 border border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse'>
             <div>
               {chatMessages.map((chatMessage, i) => {
                 return (
@@ -39,6 +39,7 @@ const LiveChat = () => {
                     key={i}
                     name={chatMessage.name}
                     message={chatMessage.message}
+                    ind={i}
                   />
                 )
               })}
@@ -46,7 +47,7 @@ const LiveChat = () => {
           </div>
 
           <form
-            className='w-96 p-2 ml-2 border border-black rounded'
+            className='w-96 p-2 border border-black rounded'
             onSubmit={(e) => {
               e.preventDefault()
               console.log('On Form Submit')
@@ -70,7 +71,7 @@ const LiveChat = () => {
           </form>
         </div>
       )}
-    </>
+    </div>
   )
 }
 
