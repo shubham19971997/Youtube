@@ -6,7 +6,7 @@ const ChatMessage = ({ name, message, ind }) => {
       <img
         // src='https://cdn-icons-png.flaticon.com/512/709/709722.png'
         src={`https://picsum.photos/200/300?random=${ind}`}
-        className='h-8 w-8 rounded-full'
+        className='h-8 w-8 rounded-full flex-none'
         alt='user'
       />
       <div className='pl-2 flex flex-col'>

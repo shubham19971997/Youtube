@@ -14,8 +14,8 @@ const LiveChat = () => {
     const i = setInterval(() => {
       dispatch(
         addMessage({
-          name: generateRandomName(),
-          message: makeRandomMessage(21) + ' My Boy',
+          name: generateRandomName() + ' ' + generateRandomName(),
+          message: makeRandomMessage(),
         })
       )
     }, 1000)

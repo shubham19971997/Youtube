@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/appSlice'
-import { useSearchParams,useLocation } from 'react-router-dom'
+import { useSearchParams, useLocation } from 'react-router-dom'
 import CommentsContainer from './CommentsContainer'
 import LiveChat from './LiveChat'
 import VideoInfo from './VideoInfo'
@@ -13,7 +13,7 @@ const WatchPage = () => {
   useEffect(() => {
     dispatch(closeMenu())
   }, [])
-  let {state} = useLocation();
+  let { state } = useLocation()
   console.log(state.info)
   return (
     <div className='flex flex-col pl-24 w-full'>
@@ -30,15 +30,16 @@ const WatchPage = () => {
             className='rounded-sm'
           ></iframe>
           <div>
-              <VideoInfo info={state.info}/>
+            <VideoInfo info={state.info} />
+            <CommentsContainer />
           </div>
         </div>
-        <div className="mr-8">
+        <div className='mr-8'>
           <LiveChat />
-          <SuggestedVideos/>
+          <SuggestedVideos />
         </div>
       </div>
-      <CommentsContainer />
+      
     </div>
   )
 }
