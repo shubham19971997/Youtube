@@ -114,7 +114,7 @@ const CommentsContainer = () => {
               </button>
               <button
                 className={`m-1 bg-slate-100 font-medium text-slate-500 p-2 text-sm rounded-full ${
-                  comment.length > 0 ? 'bg-blue-700 text-white' : ''
+                  comment.length > 0 ? 'bg-blue-600 text-white' : ''
                 }`}
               >
                 Comment
