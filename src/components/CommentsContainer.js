@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MdSort } from 'react-icons/md'
+import { SlEmotsmile } from 'react-icons/sl'
 
 const commentsData = [
   {
@@ -83,6 +84,7 @@ const Comment = ({ data, ind }) => {
 }
 
 const CommentsContainer = () => {
+  const [comment, setComment] = useState('')
   return (
     <div className='m-5 p-2 relative'>
       <div className='flex'>
@@ -93,12 +95,33 @@ const CommentsContainer = () => {
       <div className='mt-4 flex'>
         <img
           className='w-10 h-10 rounded-full'
-          alt="Profile"
+          alt='Profile'
           src={`https://picsum.photos/200/300?random=${Math.floor(
             Math.random() * 10
           )}`}
         />
-        <input className='ml-2 w-full pl-2 text-sm' placeholder='Add a comment...'  />
+        <div className='w-full'>
+          <input
+            className='ml-2 w-full pb-1 text-xs border-b-2 focus:border-b-2 outline-0 focus:border-black focus:ease-in duration-700'
+            placeholder='Add a comment...'
+            onChange={(e) => setComment(e.target.value)}
+          />
+          <div className='flex justify-between w-full items-center'>
+            <SlEmotsmile />
+            <div>
+              <button className='m-1 font-medium hover:bg-slate-200 p-2 text-sm rounded-full'>
+                Cancel
+              </button>
+              <button
+                className={`m-1 bg-slate-100 font-medium text-slate-500 p-2 text-sm rounded-full ${
+                  comment.length > 0 ? 'bg-blue-700 text-white' : ''
+                }`}
+              >
+                Comment
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <CommentsList comments={commentsData} />
     </div>
