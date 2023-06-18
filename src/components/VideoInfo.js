@@ -79,7 +79,9 @@ const VideoInfo = ({ info }) => {
           className='mt-2 cursor-pointer font-normal'
           onClick={() => setShowMore(!showMore)}
         >
-          {showMore ? description : description.slice(0, 350) + '......'}
+          {showMore
+            ? description
+            : description.slice(0, 350) + '......'}
         </p>
       </div>
     </div>
