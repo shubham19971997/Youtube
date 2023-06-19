@@ -63,7 +63,7 @@ const LiveChat = () => {
             }}
           >
             <input
-              className='ml-1 mb-1 h-8 w-full items-center text-sm mb-1 border-b-2 focus:border-b-2 outline-0 focus:border-blue-600 focus:ease-in duration-700'
+              className='ml-1 mr-2 h-8 w-full items-center text-sm mb-1 border-b-2 focus:border-b-2 outline-0 focus:border-blue-600 focus:ease-in duration-700'
               placeholder='Say Something...'
               type='text'
               value={liveMessage}

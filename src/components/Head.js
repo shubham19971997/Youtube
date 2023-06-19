@@ -57,7 +57,7 @@ const Head = () => {
   }
 
   return (
-    <div className='flex fixed p-2 w-full bg-white'>
+    <div className='flex fixed p-2 w-full bg-white z-10'>
       <div className='flex basis-1/4 items-center col-span-1 content-center'>
         <div className='hover:bg-gray-200 p-2 flex items-center justify-center rounded-full h-9 w-9'>
           <RxHamburgerMenu
