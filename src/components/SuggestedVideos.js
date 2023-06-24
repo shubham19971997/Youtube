@@ -34,10 +34,14 @@ const SuggestedVideos = () => {
                 <p className='font-normal text-xs text-slate-600 pl-1 mt-2'>
                   {video.snippet.channelTitle}
                 </p>
-                <p className="flex">
-                  <p className='pl-1 pr-1 font-normal text-xs text-slate-600'>12k views</p>
+                <p className='flex'>
+                  <p className='pl-1 pr-1 font-normal text-xs text-slate-600'>
+                    12k views
+                  </p>
                   <p className='h-1 w-1 bg-slate-500 mt-1.5 rounded-full'></p>
-                  <p className='pl-1 font-normal text-xs text-slate-600'>1 months ago</p>
+                  <p className='pl-1 font-normal text-xs text-slate-600'>
+                    1 months ago
+                  </p>
                 </p>
               </div>
             </div>

@@ -93,8 +93,8 @@ const Head = () => {
               <IoIosSearch size={20} color='gray' className='mx-3' />
             </button>
           </div>
-          <div className='p-2 pl-4'>
-            <IoMdMic size={18} className='' />
+          <div className='ml-4 cursor-pointer flex justify-center items-center h-8 w-10 rounded-full hover:bg-slate-200'>
+            <IoMdMic size={18} />
           </div>
         </div>
         {newSuggestions && searchQuery.length > 0 && (
@@ -114,19 +114,19 @@ const Head = () => {
           </div>
         )}
       </div>
-      <div className='col-span-1 flex flex-row-reverse basis-1/4'>
+      <div className='col-span-1 flex items-center flex-row-reverse basis-1/4'>
         <div className='p-2'>
           <img
-            className='h-6 w-6 '
+            className='h-6 w-6'
             alt='user'
             src='https://cdn-icons-png.flaticon.com/512/709/709722.png'
           />
         </div>
-        <div className='hover:bg-gray-200 p-2 flex-row items-center justify-center rounded-full h-10 w-10'>
-          <TfiBell size={20} className='' />
+        <div className='hover:bg-gray-200 flex items-center justify-center rounded-full h-8 w-8'>
+          <TfiBell size={18} className='' />
         </div>
-        <div className='hover:bg-gray-200 p-2 flex-row items-center justify-center rounded-full h-10 w-10'>
-          <RiVideoAddLine size={20} />
+        <div className='hover:bg-gray-200 flex items-center justify-center rounded-full h-8 w-8'>
+          <RiVideoAddLine size={18} />
         </div>
       </div>
     </div>
