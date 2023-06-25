@@ -115,17 +115,17 @@ const Head = () => {
         )}
       </div>
       <div className='col-span-1 flex items-center flex-row-reverse basis-1/4'>
-        <div className='p-2'>
+        <div className='rounded-full bg-slate-300 cursor-pointer h-8 w-8'>
           <img
-            className='h-6 w-6'
+            className='h-8 w-8 rounded-full'
             alt='user'
-            src='https://cdn-icons-png.flaticon.com/512/709/709722.png'
+            src={`https://xsgames.co/randomusers/avatar.php?g=male`}
           />
         </div>
-        <div className='hover:bg-gray-200 flex items-center justify-center rounded-full h-8 w-8'>
+        <div className='mx-3 cursor-pointer hover:bg-gray-200 flex items-center justify-center rounded-full h-8 w-8'>
           <TfiBell size={18} className='' />
         </div>
-        <div className='hover:bg-gray-200 flex items-center justify-center rounded-full h-8 w-8'>
+        <div className='hover:bg-gray-200 cursor-pointer flex items-center justify-center rounded-full h-8 w-8'>
           <RiVideoAddLine size={18} />
         </div>
       </div>

@@ -36,8 +36,8 @@ const VideoInfo = ({ info }) => {
             <img
               alt='PP'
               className='rounded-full h-10 w-10'
-              src={`https://picsum.photos/200/300?random=2`}
-            />
+              src={`https://xsgames.co/randomusers/avatar.php?g=male`}
+              />
           </div>
           <div className='font-roboto'>
             <p className='font-medium text-xs font-semibold text-base px-2'>

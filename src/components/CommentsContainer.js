@@ -118,9 +118,7 @@ const CommentsContainer = () => {
         <img
           className='w-10 h-10 rounded-full'
           alt='Profile'
-          src={`https://picsum.photos/200/300?random=${Math.floor(
-            Math.random() * 10
-          )}`}
+          src={`https://xsgames.co/randomusers/avatar.php?g=male`}
         />
         <div className='w-full'>
           <input
